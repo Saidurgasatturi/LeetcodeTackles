@@ -17,3 +17,8 @@ class Solution {
         return sb.toString();   
     }
 }
+/*
+Example:
+input:leet**cod*e
+output:lecoe
+*/
