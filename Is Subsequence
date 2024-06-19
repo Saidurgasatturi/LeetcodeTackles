@@ -1,0 +1,46 @@
+class Solution {
+    public static boolean order(List<Integer> a){
+        boolean istrue=true;
+        for(int i=1;i<a.size();i++){
+            if(a.get(i-1)>a.get(i))
+            {
+                istrue=false;
+                break;
+            }
+        }
+        return istrue;
+    }
+    public boolean isSubsequence(String s, String t) {
+        boolean issequence=false;
+        ArrayList<Integer> a=new ArrayList<>();
+        if(s.length()==0){
+            return true;
+        }
+        int x=0;
+        for(int i=0;i<s.length();i++){
+            for(int j=x;j<t.length();j++){
+                if(s.charAt(i)==t.charAt(j)){
+                    a.add(j);
+                    x=j+1;
+                    break;
+                }
+            }
+        }
+        if(a.size()==s.length()&&order(a)){
+            issequence=true;
+            
+        }
+        return issequence;
+        
+    }
+}
+/*
+Example 1:
+
+Input: s = "abc", t = "ahbgdc"
+Output: true
+Example 2:
+
+Input: s = "axc", t = "ahbgdc"
+Output: false
+ */
